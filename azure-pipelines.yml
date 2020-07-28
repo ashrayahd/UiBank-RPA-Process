@@ -26,7 +26,7 @@ steps:
     folderName: 'Ashraya'
 - task: UiPathDeploy@2
   inputs:
-    orchestratorConnection: 'UiPath Test Orchestrator'
+    orchestratorConnection: 'UiPath Production Orchestrator'
     packagesPath: '$(Build.ArtifactStagingDirectory)\Output'
     folderName: 'Ashraya'
     environments: 'ASHENV'
