@@ -1,0 +1,32 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+- task: UiPathPack@2
+  inputs:
+    versionType: 'AutoVersion'
+    projectJsonPath: '$(Build.SourcesDirectory)'
+    outputType: 'Process'
+    orchestratorConnection: 'UiPath Test Orchestrator'
+    outputPath: '$(Build.ArtifactStagingDirectory)\Output'
+- task: UiPathTest@2
+  inputs:
+    testTarget: 'TestProject'
+    orchestratorConnection: 'UiPath Test Orchestrator'
+    testProjectPath: '$(Build.SourcesDirectory)'
+    environment: 'ASHENV'
+    folderName: 'Ashraya'
+- task: UiPathDeploy@2
+  inputs:
+    orchestratorConnection: 'UiPath Test Orchestrator'
+    packagesPath: '$(Build.ArtifactStagingDirectory)\Output'
+    folderName: 'Ashraya'
+    environments: 'ASHENV'
