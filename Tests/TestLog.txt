@@ -1,0 +1,21 @@
+﻿
+=================================================
+Starting new set of 8 tests at 11:40:50  AM, 28/05/2020
+=================================================
+11:40:58 AM	Test 1 PASS  ---> Framework\InitAllSettings.xaml
+11:41:57 AM	Test 2 FAIL  ---> Framework\InitAllApplications.xaml ---> Success
+11:42:28 AM	Test 3 FAIL  ---> Framework\CloseAllApplications.xaml ---> Success
+11:42:58 AM	Test 4 PASS  ---> Framework\CloseAllApplications.xaml
+11:43:04 AM	Test 5 PASS  ---> Framework\InitAllSettings.xaml
+11:43:09 AM	Test 6 PASS  ---> Framework\InitAllSettings.xaml
+11:43:12 AM	Test 7 FAIL  ---> Framework\InitAllApplications.xaml ---> Success
+
+=================================================
+Starting new set of 8 tests at 04:08:56  PM, 27/07/2020
+=================================================
+04:09:02 PM	Test 1 PASS  ---> Framework\InitAllSettings.xaml
+
+=================================================
+Starting new set of 8 tests at 04:15:14  PM, 27/07/2020
+=================================================
+04:15:20 PM	Test 1 PASS  ---> Framework\InitAllSettings.xaml

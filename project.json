@@ -1,0 +1,113 @@
+{
+  "name": "UiBank Overdrawn Accounts",
+  "description": "This process collects overdrawn accounts from the UiBank Admin App.",
+  "main": "Main.xaml",
+  "dependencies": {
+    "UiPath.Credentials.Activities": "[1.1.6479.13204]",
+    "UiPath.Excel.Activities": "[2.7.2]",
+    "UiPath.System.Activities": "[20.3.0-beta.798912]",
+    "UiPath.Testing.Activities": "[0.9.0-alpha.798505]",
+    "UiPath.UIAutomation.Activities": "[20.2.0-preview]",
+    "UiPath.WebAPI.Activities": "[1.4.4]",
+    "UiPathTeam.JsonToCsvConverter.Activities": "[1.1.0]"
+  },
+  "webServices": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "19.10.4.0",
+  "projectVersion": "6.5.3",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "isPausable": true,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow"
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "fileInfoCollection": [
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "3f2f66c4-254a-4987-b1f5-715047881381",
+        "fileName": "TestCases\\NegativeAccountsProcess\\VerifyNegativeAccountsApi.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "1682e286-9369-45fa-9bfd-730b0bb26373",
+        "fileName": "TestCases\\Environment\\VerifyEndpoint.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "ff5cc4d8-634a-471f-bcf9-d8f8b8f4fe4d",
+        "fileName": "TestCases\\NegativeAccountsProcess\\VerifyNegativeAccountsUi.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "e0981413-e3e4-4376-b404-8bb659dc9b70",
+        "fileName": "TestCases\\Environment\\VerifyAssetsAreSet.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "48a379cc-96a2-4c6d-a857-5a9dae884168",
+        "fileName": "TestCases\\Environment\\VerifyApiToken.xaml"
+      }
+    ]
+  },
+  "arguments": {
+    "input": [
+      {
+        "name": "in_OrchestratorQueueName",
+        "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "required": false,
+        "hasDefault": false
+      }
+    ],
+    "output": [
+      {
+        "name": "out_ResultFileName",
+        "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      }
+    ]
+  },
+  "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "TestCases\\Environment\\VerifyApiToken.xaml",
+      "uniqueId": "48a379cc-96a2-4c6d-a857-5a9dae884168",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "TestCases\\Environment\\VerifyAssetsAreSet.xaml",
+      "uniqueId": "e0981413-e3e4-4376-b404-8bb659dc9b70",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "TestCases\\Environment\\VerifyEndpoint.xaml",
+      "uniqueId": "1682e286-9369-45fa-9bfd-730b0bb26373",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "TestCases\\NegativeAccountsProcess\\VerifyNegativeAccountsApi.xaml",
+      "uniqueId": "3f2f66c4-254a-4987-b1f5-715047881381",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "TestCases\\NegativeAccountsProcess\\VerifyNegativeAccountsUi.xaml",
+      "uniqueId": "ff5cc4d8-634a-471f-bcf9-d8f8b8f4fe4d",
+      "input": [],
+      "output": []
+    }
+  ]
+}
