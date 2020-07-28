@@ -12,8 +12,7 @@ pool:
 steps:
 - task: UiPathPack@2
   inputs:
-    versionType: 'ManualVersion'
-    version: '2.0.0'
+    versionType: 'AutoVersion'
     projectJsonPath: '$(Build.SourcesDirectory)'
     outputType: 'Process'
     orchestratorConnection: 'UiPath Test Orchestrator'
