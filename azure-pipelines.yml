@@ -28,5 +28,5 @@ steps:
   inputs:
     orchestratorConnection: 'UiPath Production Orchestrator'
     packagesPath: '$(Build.ArtifactStagingDirectory)\Output'
-    folderName: 'Ashraya'
+    folderName: 'Default'
     environments: 'ASHENV'
