@@ -12,6 +12,7 @@
     "UiPathTeam.JsonToCsvConverter.Activities": "[1.1.0]"
   },
   "webServices": [],
+  "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "19.10.4.0",
   "projectVersion": "6.5.3",
@@ -45,7 +46,7 @@
         "fileName": "TestCases\\Environment\\VerifyEndpoint.xaml"
       },
       {
-        "editingStatus": "Publishable",
+        "editingStatus": "InProgress",
         "testCaseId": "ff5cc4d8-634a-471f-bcf9-d8f8b8f4fe4d",
         "fileName": "TestCases\\NegativeAccountsProcess\\VerifyNegativeAccountsUi.xaml"
       },
@@ -108,6 +109,13 @@
       "uniqueId": "ff5cc4d8-634a-471f-bcf9-d8f8b8f4fe4d",
       "input": [],
       "output": []
+    },
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "4132b045-30dd-4acb-88ed-6e4d1eb127ad",
+      "input": [],
+      "output": []
     }
-  ]
+  ],
+  "isTemplate": false
 }
