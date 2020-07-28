@@ -36,29 +36,29 @@
     },
     "fileInfoCollection": [
       {
-        "editingStatus": "Publishable",
-        "testCaseId": "3f2f66c4-254a-4987-b1f5-715047881381",
-        "fileName": "TestCases\\NegativeAccountsProcess\\VerifyNegativeAccountsApi.xaml"
-      },
-      {
-        "editingStatus": "Publishable",
-        "testCaseId": "1682e286-9369-45fa-9bfd-730b0bb26373",
-        "fileName": "TestCases\\Environment\\VerifyEndpoint.xaml"
-      },
-      {
         "editingStatus": "InProgress",
         "testCaseId": "ff5cc4d8-634a-471f-bcf9-d8f8b8f4fe4d",
         "fileName": "TestCases\\NegativeAccountsProcess\\VerifyNegativeAccountsUi.xaml"
       },
       {
         "editingStatus": "Publishable",
-        "testCaseId": "e0981413-e3e4-4376-b404-8bb659dc9b70",
+        "testCaseId": "20629afc-2da4-47c1-a105-0df7a32e91c9",
+        "fileName": "TestCases\\NegativeAccountsProcess\\VerifyNegativeAccountsAPI.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "6a395cf5-bf8a-46e8-8210-709508aa851b",
         "fileName": "TestCases\\Environment\\VerifyAssetsAreSet.xaml"
       },
       {
         "editingStatus": "Publishable",
-        "testCaseId": "48a379cc-96a2-4c6d-a857-5a9dae884168",
-        "fileName": "TestCases\\Environment\\VerifyApiToken.xaml"
+        "testCaseId": "9e3d96d5-bf51-46b4-9cda-0245443fa25a",
+        "fileName": "TestCases\\Environment\\VerifyEndpoint.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "08a7dfe6-5ac8-4eac-a2fd-09f48bb83ad9",
+        "fileName": "TestCases\\Environment\\VerifyAPIToken.xaml"
       }
     ]
   },
@@ -80,30 +80,6 @@
   },
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
-    {
-      "filePath": "TestCases\\Environment\\VerifyApiToken.xaml",
-      "uniqueId": "48a379cc-96a2-4c6d-a857-5a9dae884168",
-      "input": [],
-      "output": []
-    },
-    {
-      "filePath": "TestCases\\Environment\\VerifyAssetsAreSet.xaml",
-      "uniqueId": "e0981413-e3e4-4376-b404-8bb659dc9b70",
-      "input": [],
-      "output": []
-    },
-    {
-      "filePath": "TestCases\\Environment\\VerifyEndpoint.xaml",
-      "uniqueId": "1682e286-9369-45fa-9bfd-730b0bb26373",
-      "input": [],
-      "output": []
-    },
-    {
-      "filePath": "TestCases\\NegativeAccountsProcess\\VerifyNegativeAccountsApi.xaml",
-      "uniqueId": "3f2f66c4-254a-4987-b1f5-715047881381",
-      "input": [],
-      "output": []
-    },
     {
       "filePath": "TestCases\\NegativeAccountsProcess\\VerifyNegativeAccountsUi.xaml",
       "uniqueId": "ff5cc4d8-634a-471f-bcf9-d8f8b8f4fe4d",
