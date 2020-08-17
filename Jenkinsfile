@@ -6,8 +6,8 @@ pipeline {
          steps {
         echo 'Packing UiBank RPA Process.'
         UiPathPack (
-        outputPath:'${WORKSPACE}\\Output', 
-        projectJsonPath: '${WORKSPACE}', 
+        outputPath:'UiBank DevOps Pipeline\\Output', 
+        projectJsonPath: 'UiBank DevOps Pipeline\\project.json', 
         version: AutoVersion()
         )
          }
