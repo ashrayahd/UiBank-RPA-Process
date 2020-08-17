@@ -20,8 +20,8 @@ pipeline {
             orchestratorAddress: 'https://orch-testingsol-web0-we-webapp.azurewebsites.net/', 
             orchestratorTenant: 'Default', 
             testResultsOutputPath: 'result.xml',
-            folderName: "Ashraya",
-            timeout: "10000",
+            folderName: 'Ashraya',
+            timeout: 10000,
             testTarget: TestProject(environments: 'ASHENV', testProjectPath: 'project.json')
             )
          }
