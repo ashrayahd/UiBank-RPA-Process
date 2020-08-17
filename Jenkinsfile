@@ -14,7 +14,7 @@ pipeline {
       }
       stage('Test') {
          steps {
-            echo 'Execute RPA tests.'
+            echo 'Executing RPA tests.'
             UiPathTest (
             credentials: UserPass('Orchestrator'), 
             orchestratorAddress: 'https://orch-testingsol-web0-we-webapp.azurewebsites.net/', 
@@ -28,7 +28,15 @@ pipeline {
       }
       stage('Deploy') {
          steps {
-            echo 'Deploying to UAT environment.'
+            echo 'Deploying to production Orchestrator.'
+            UiPathDeploy (
+            credentials: Token(accountName: 'Ashraya', credentialsId: 'UserKey'), 
+            environments: 'ASHENV',
+            folderName: 'Default', 
+            orchestratorAddress: 'https://cloud.uipath.com/', 
+            orchestratorTenant: 'Ashraya', 
+            packagePath: 'Output'
+             )
          }
       }
    }
