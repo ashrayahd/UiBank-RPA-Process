@@ -16,11 +16,11 @@ pipeline {
          steps {
             echo 'Execute RPA tests.'
             UiPathTest (
-            credentials: UserPass('Orchestrator'), 
+            credentials:[ UserPass:'Orchestrator'], 
             orchestratorAddress: 'https://orch-testingsol-web0-we-webapp.azurewebsites.net/', 
             orchestratorTenant: 'Default', 
             testResultsOutputPath: 'result.xml',
-            testTarget: TestProject(environments: 'ASHENV', testProjectPath: 'project.json')
+            testTarget: [TestProject(environments: 'ASHENV', testProjectPath: 'project.json')]
             )
          }
       }
