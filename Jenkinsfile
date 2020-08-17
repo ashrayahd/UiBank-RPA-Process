@@ -16,10 +16,12 @@ pipeline {
          steps {
             echo 'Execute RPA tests.'
             UiPathTest (
-            credentials:[$class: 'UserPassAuthenticationEntry', credentialsId: "Orchestrator"], 
+            credentials: UserPass('Orchestrator'), 
             orchestratorAddress: 'https://orch-testingsol-web0-we-webapp.azurewebsites.net/', 
             orchestratorTenant: 'Default', 
             testResultsOutputPath: 'result.xml',
+            folderName: "Ashraya",
+            timeout: "10000",
             testTarget: TestProject(environments: 'ASHENV', testProjectPath: 'project.json')
             )
          }
