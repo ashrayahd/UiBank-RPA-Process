@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="VerifyNegativeAccountsAPI" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="886,1396" sap2010:WorkflowViewState.IdRef="VerifyNegativeAccountsAPI_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="VerifyNegativeAccountsAPI" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="886,1295" sap2010:WorkflowViewState.IdRef="VerifyNegativeAccountsAPI_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="25">
+    <scg:List x:TypeArguments="x:String" Capacity="50">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -26,6 +26,8 @@
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.Excel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -53,7 +55,7 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="VerifyNegativeAccountsAPI" sap:VirtualizedContainerService.HintSize="476,1231" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="VerifyNegativeAccountsAPI" sap:VirtualizedContainerService.HintSize="476,1130" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="apiNegativeAccountsFile" />
       <Variable x:TypeArguments="sd:DataTable" Name="apiNegAccounts" />
@@ -90,10 +92,29 @@
     </ui:CommentOut>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke GetNegativeBallanceAcounts workflow" sap:VirtualizedContainerService.HintSize="434,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="GetNegativeBallanceAcounts.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="x:String" x:Key="outputFile">[apiNegativeAccountsFile]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="outputFile">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="apiNegativeAccountsFile" />
+        </OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:ReadCsvFile Encoding="{x:Null}" DataTable="[apiNegAccounts]" Delimitator="Comma" DisplayName="Read CSV" FilePath="[apiNegativeAccountsFile]" sap:VirtualizedContainerService.HintSize="434,152" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" />
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,244" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:ReadCsvFile Encoding="{x:Null}" DataTable="[apiNegAccounts]" Delimitator="Comma" DisplayName="Read CSV" FilePath="[apiNegativeAccountsFile]" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" />
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
     <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="476,352" sap2010:WorkflowViewState.IdRef="Sequence_4">
@@ -221,10 +242,10 @@
     </ui:CommentOut>
     <uta:VerifyExpressionWithOperator ContinueOnFailure="True" DisplayName="Verify Expected Match Resulted from API" sap:VirtualizedContainerService.HintSize="434,61" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_3" Operator="Equality" TakeScreenshotInCaseOfFailingAssertion="False">
       <uta:VerifyExpressionWithOperator.FirstExpression>
-        <InArgument x:TypeArguments="x:Int32">[apiNegAccounts.Rows.Count]</InArgument>
+        <InArgument x:TypeArguments="x:Int32">[dtExpected.Rows.Count]</InArgument>
       </uta:VerifyExpressionWithOperator.FirstExpression>
       <uta:VerifyExpressionWithOperator.SecondExpression>
-        <InArgument x:TypeArguments="x:Int32">[apiNegAccounts.Rows.Count]</InArgument>
+        <InArgument x:TypeArguments="x:Int32">[dtExpected.Rows.Count]</InArgument>
       </uta:VerifyExpressionWithOperator.SecondExpression>
     </uta:VerifyExpressionWithOperator>
   </Sequence>
