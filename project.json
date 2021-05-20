@@ -5,11 +5,10 @@
   "dependencies": {
     "UiPath.Credentials.Activities": "[1.1.6479.13204]",
     "UiPath.Excel.Activities": "[2.7.2]",
-    "UiPath.System.Activities": "[20.3.0-beta.798912]",
+    "UiPath.System.Activities": "[21.4.0]",
     "UiPath.Testing.Activities": "[0.9.0-alpha.798505]",
     "UiPath.UIAutomation.Activities": "[20.2.0-preview]",
-    "UiPath.WebAPI.Activities": "[1.4.4]",
-    "UiPathTeam.JsonToCsvConverter.Activities": "[1.1.0]"
+    "UiPath.WebAPI.Activities": "[1.4.4]"
   },
   "webServices": [],
   "entitiesStores": [],
@@ -25,7 +24,9 @@
       "Private:*",
       "*password*"
     ],
-    "executionType": "Workflow"
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false
   },
   "designOptions": {
     "projectProfile": "Developement",
@@ -33,6 +34,9 @@
     "libraryOptions": {
       "includeOriginalXaml": false,
       "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
     },
     "fileInfoCollection": [
       {
@@ -60,7 +64,8 @@
         "testCaseId": "08a7dfe6-5ac8-4eac-a2fd-09f48bb83ad9",
         "fileName": "TestCases\\Environment\\VerifyAPIToken.xaml"
       }
-    ]
+    ],
+    "modernBehavior": false
   },
   "arguments": {
     "input": [
@@ -93,5 +98,8 @@
       "output": []
     }
   ],
-  "isTemplate": false
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Legacy"
 }
