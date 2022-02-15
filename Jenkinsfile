@@ -35,7 +35,7 @@ pipeline {
             UiPathDeploy (
             credentials: Token(accountName: 'Ashraya', credentialsId: 'UserKey'), 
             traceLoggingLevel: 'None',
-            entryPoints: 'Main.xaml'
+            entryPoints: 'Main.xaml',
             environments: 'ASHENV',
             folderName: 'Default', 
             orchestratorAddress: 'https://cloud.uipath.com/', 
