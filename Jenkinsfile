@@ -7,7 +7,7 @@ pipeline {
         echo 'Packing UiBank RPA Process.'
         UiPathPack (
         outputPath:'Output', 
-        traceLoggingLevel: "None",
+        traceLevel: "None",
         projectJsonPath: 'project.json', 
         version: AutoVersion()
         )
@@ -18,8 +18,8 @@ pipeline {
             echo 'Executing RPA tests.'
             UiPathTest (
             credentials: UserPass('Orchestrator'), 
-            traceLoggingLevel: 'None',
-            inputParameters: 'None',
+            traceLevel: 'None',
+            parametersFilePath: 'None',
             orchestratorAddress: 'https://orch-testingsol-web0-we-webapp.azurewebsites.net/', 
             orchestratorTenant: 'Default', 
             testResultsOutputPath: 'result.xml',
@@ -34,8 +34,8 @@ pipeline {
             echo 'Deploying to production Orchestrator.'
             UiPathDeploy (
             credentials: Token(accountName: 'Ashraya', credentialsId: 'UserKey'), 
-            traceLoggingLevel: 'None',
-            entryPoints: 'Main.xaml',
+            traceLevel: 'None',
+            entryPointsPaths: 'Main.xaml',
             environments: 'ASHENV',
             folderName: 'Default', 
             orchestratorAddress: 'https://cloud.uipath.com/', 
